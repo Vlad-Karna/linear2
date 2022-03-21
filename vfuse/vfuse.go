@@ -38,6 +38,9 @@ type Dir interface {
 	Readdir(fill func(name string) bool) (errc int)
 	Make(n string, mode uint32) (res Node, errc int)
 	Rename(node Node, newname string) (errc int)
+	// Returns true if Dir's parent .Get()/.Put() should be called
+//	Get() bool
+//	Put() bool
 }
 
 type File interface {
@@ -59,6 +62,7 @@ type FS struct {
 	openPath		map[string]uint64		// maps path to handle
 	uid, gid		uint32
 	mount			map[string]Dir			// mount points 'path' --> Dir
+//	xmount			map[Dir]Dir
 }
 
 type OpenNodeEntry struct {
@@ -76,6 +80,8 @@ func NewFS(root Dir) (res *FS, err error) {
 		openPath: make(map[string]uint64),
 		mount:    make(map[string]Dir),
 	}
+//	res.OpenNode[res.handle] = root;
+//	res.openPath[""] = res.handle;
 return
 }
 

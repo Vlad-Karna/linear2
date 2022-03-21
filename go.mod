@@ -1,4 +1,4 @@
-module github.com/Vlad-Karna/vfs
+module github.com/Vlad-Karna/vfuse
 
 go 1.16
 

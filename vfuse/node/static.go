@@ -3,7 +3,7 @@ package node
 import (
 	"time"
 
-	. "github.com/Vlad-Karna/vfs/vfuse"
+	. "github.com/Vlad-Karna/vfuse/vfuse"
 
 	"github.com/billziss-gh/cgofuse/fuse"
 )

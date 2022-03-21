@@ -5,7 +5,7 @@ import (
 	"io/fs"
 	"errors"
 
-	. "github.com/Vlad-Karna/vfs/vfuse"
+	. "github.com/Vlad-Karna/vfuse/vfuse"
 )
 
 var ErrNotReaderWriterAt = errors.New("neither io.ReaderAt nor io.WriterAt")

@@ -4,7 +4,7 @@ import (
 	"strings"
 	"flag"
 
-	logtrace "github.com/Vlad-Karna/vfs/trace"
+	logtrace "github.com/Vlad-Karna/vfuse/trace"
 )
 
 //go:generate enumer -type LogMaskType -trimprefix=Log
