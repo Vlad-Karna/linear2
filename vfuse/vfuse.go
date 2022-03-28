@@ -16,6 +16,7 @@ const (
 	DirNodeType		NodeType = 1 + iota
 	FileNodeType
 	LinkNodeType
+//	FSNodeType
 )
 
 // Abstract Classes
@@ -35,7 +36,7 @@ type Node interface {
 type Dir interface {
 	Node
 	Lookup(n string) Node
-	Readdir(fill func(name string) bool) (errc int)
+	Readdir() (res []string, errc int)
 	Make(n string, mode uint32) (res Node, errc int)
 	Rename(node Node, newname string) (errc int)
 	// Returns true if Dir's parent .Get()/.Put() should be called

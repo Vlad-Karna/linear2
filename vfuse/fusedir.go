@@ -27,9 +27,14 @@ func (s *FS) Readdir (path string, fill func(name string, stat *fuse.Stat_t, ofs
 	}
 	fill (".",  nil, 0)
 	fill ("..", nil, 0)
-return dir.Readdir(func (n string) bool{
-	return fill (n, nil, 0)
-})
+	res, errc := dir.Readdir()
+	if errc != 0 {
+		return
+	}
+	for _, e := range res {
+		fill(e, nil, 0)
+	}
+return
 }
 
 // Fsyncdir synchronizes directory contents
